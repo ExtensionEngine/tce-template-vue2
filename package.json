@@ -1,5 +1,5 @@
 {
-  "name": "vite-vue2-simple-starter",
+  "name": "tce-template-vue",
   "version": "0.0.1",
   "scripts": {
     "serve": "vite",
@@ -10,12 +10,9 @@
     "build:prod": "vite build --mode production"
   },
   "dependencies": {
-    "axios": "^0.25.0",
     "vite": "^2.7.13",
     "vue": "^2.7.0",
-    "vue-router": "^3.5.3",
-    "vuetify": "^2.6.9",
-    "vuex": "^3.6.2"
+    "vuetify": "^2.6.9"
   },
   "devDependencies": {
     "@vitejs/plugin-legacy": "^1.6.4",
