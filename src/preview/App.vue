@@ -6,7 +6,11 @@
     <v-main>
       <v-container>
         <v-row>
-          <edit-preview :elementData="elementData" />
+          <edit-preview 
+            :elementData="elementData"
+            @save="saveElementData"
+            @delete="deleteElementData" 
+          />
           <display-preview :elementData="elementData" />
         </v-row>
       </v-container>
@@ -27,8 +31,15 @@ export default {
   components: {
     'edit-preview': EditPreview,
     'display-preview': DisplayPreview,
+  },
+  methods: {
+    saveElementData(data) {
+      this.elementData = data;
+    },
+    deleteElementData() {
+      this.elementData = {};
+    }
   }
-  // add methods and handlers for save and delete events from edit component
 }
 </script>
 

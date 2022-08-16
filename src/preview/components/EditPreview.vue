@@ -3,7 +3,11 @@
     <v-row>
       <v-col>
         <h2 class="mb-5">Edit preview</h2>
-        <edit v-bind="editProps" />
+        <edit 
+          v-bind="editProps"
+          @save="onSave"
+          @delete="onDelete"
+        />
       </v-col>
     </v-row>
     <v-row>
@@ -42,6 +46,14 @@ export default {
     editProps: function() {
       return {...this.elementData}
     },
+  },
+  methods: {
+    onSave(data) {
+      this.$emit('save', data);
+    },
+    onDelete() {
+      this.$emit('delete');
+    }
   }
 }
 </script>
