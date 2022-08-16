@@ -6,12 +6,11 @@
     <v-main>
       <v-container>
         <v-row>
-          <edit-preview 
-            :elementData="elementData"
+          <edit-preview
             @save="saveElementData"
-            @delete="deleteElementData" 
-          />
-          <display-preview :elementData="elementData" />
+            @delete="deleteElementData"
+            :element-data="elementData" />
+          <display-preview :element-data="elementData" />
         </v-row>
       </v-container>
     </v-main>
@@ -23,14 +22,10 @@ import DisplayPreview from './components/DisplayPreview.vue';
 import EditPreview from './components/EditPreview.vue';
 
 export default {
-  data: function() {
+  data: function () {
     return {
-      elementData: {},
-    }
-  },
-  components: {
-    'edit-preview': EditPreview,
-    'display-preview': DisplayPreview,
+      elementData: {}
+    };
   },
   methods: {
     saveElementData(data) {
@@ -39,11 +34,14 @@ export default {
     deleteElementData() {
       this.elementData = {};
     }
+  },
+  components: {
+    'edit-preview': EditPreview,
+    'display-preview': DisplayPreview
   }
-}
+};
 </script>
 
 <style scoped>
 
 </style>
-

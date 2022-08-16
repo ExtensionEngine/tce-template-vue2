@@ -12,17 +12,17 @@ export default {
     elementData: {
       type: Object,
       required: true
-    },
-  },
-  components: {
-    'display': Display
+    }
   },
   computed: {
-    displayProps: function() {
-      return {...this.elementData}
-    },
+    displayProps: function () {
+      return { ...this.elementData };
+    }
+  },
+  components: {
+    display: Display
   }
-}
+};
 </script>
 
 <style scoped>

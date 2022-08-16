@@ -3,11 +3,10 @@
     <v-row>
       <v-col>
         <h2 class="mb-5">Edit preview</h2>
-        <edit 
-          v-bind="editProps"
+        <edit
           @save="onSave"
           @delete="onDelete"
-        />
+          v-bind="editProps" />
       </v-col>
     </v-row>
     <v-row>
@@ -35,17 +34,12 @@ export default {
     elementData: {
       type: Object,
       required: true
-    },
-  },
-  components: {
-    'edit': Edit,
-    'top-toolbar': TopToolbar,
-    'side-toolbar': SideToolbar,
+    }
   },
   computed: {
-    editProps: function() {
-      return {...this.elementData}
-    },
+    editProps: function () {
+      return { ...this.elementData };
+    }
   },
   methods: {
     onSave(data) {
@@ -54,8 +48,13 @@ export default {
     onDelete() {
       this.$emit('delete');
     }
+  },
+  components: {
+    edit: Edit,
+    'top-toolbar': TopToolbar,
+    'side-toolbar': SideToolbar
   }
-}
+};
 </script>
 
 <style scoped>

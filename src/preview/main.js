@@ -1,12 +1,11 @@
-import Vue from 'vue'
-
-import App from '@/preview/App.vue'
-import vuetify from '@/plugins/vuetify'
 import './app.scss';
+import App from '@/preview/App.vue';
+import Vue from 'vue';
+import vuetify from '@/plugins/vuetify';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
-    vuetify,
-    render: h => h(App)
-}).$mount("#app")
+  vuetify,
+  render: h => h(App)
+}).$mount('#app');

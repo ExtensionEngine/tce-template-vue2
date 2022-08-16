@@ -1,13 +1,28 @@
 {
   "name": "tce-template-vue",
+  "private": true,
+  "description": "Content element starter template for Vue 2",
+  "author": "ExtensionEngine <info@extensionengine.com>",
   "version": "0.0.1",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/content-element.umd.cjs",
+  "module": "./dist/content-element.js",
+  "exports": {
+    ".": {
+      "import": "./dist/content-element.js",
+      "require": "./dist/content-element.umd.cjs"
+    }
+  },
   "scripts": {
     "serve": "vite",
     "serve:dev": "vite --mode development",
     "serve:prod": "vite --mode production",
     "build": "vite build",
     "build:dev": "vite build --mode development",
-    "build:prod": "vite build --mode production"
+    "build:prod": "vite build --mode production",
+    "lint": "eslint --ext .js,.ts,.vue ."
   },
   "dependencies": {
     "vite": "^2.7.13",
@@ -15,7 +30,18 @@
     "vuetify": "^2.6.9"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.18.9",
+    "@babel/eslint-plugin": "^7.18.10",
+    "@extensionengine/eslint-config": "^3.0.1",
     "@vitejs/plugin-vue2": "^1.1.2",
+    "eslint": "^8.22.0",
+    "eslint-config-semistandard": "^17.0.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-require-sort": "^1.2.2",
+    "eslint-plugin-vue": "^9.3.0",
     "sass": "^1.49.0",
     "unplugin-vue-components": "^0.22.4",
     "vite-plugin-compression": "^0.4.0",
