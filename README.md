@@ -1,31 +1,70 @@
-# vite-vue2-simple-starter
+# tailor-content-element
 
-> ### Vue2 + Vite + Vuex + Vue-router + Axios
+Template project to quickly get started developing custom content elements.
 
-We provide sample Code about Vuex and Vue-router and Axios
+> **:warning: DISCLAIMER**
+> The project is in early prototype phase. More info will be added later.
 
-> #### TERMINAL NPM RUN SERVE
-![sample](https://user-images.githubusercontent.com/46044125/150083047-23b5535d-dbd1-4a47-9bd4-502bbe641d87.png)
+## Description
 
-> #### LIGHTHOUSE SCORE
-![image](https://user-images.githubusercontent.com/46044125/150083333-bf268290-466e-4cf8-927f-e5fff30bf84f.png)
+This project is a starting point used for developing custom content elements
+for [Tailor](https://github.com/ExtensionEngine/tailor).
+It is intended to get you up and running quickly by bootstraping the application
+structure and setting base default properties.
 
-> #### If you want to use this starter
-> 
-```
-npm install
-```
+## Requirements
 
-> #### If you want run this starter
-```
-npm run serve
-```
+- Node & npm
+- [degit](https://github.com/Rich-Harris/degit)
 
-> #### If you want build starter
-```
-npm run build:prod
-```
+## Setup
 
+The project is already preconfigured with certain defaults,
+however it is necessary to go through some properties and modify the values
+for the purposes of your specific custom content element.
 
-#### UPDATE INFO
-- check CHANGLOG.md
+#### Instructions
+
+1. Clone the repo by executing `degit https://github.com/ExtensionEngine/tailor-content-element`
+2. Install dependencies `npm install`
+3. Setup project by running `npm run setup`
+
+#### `content-element` folder
+
+##### Folder structure
+<ul>
+  <li>index.js - contains custom element manifest</li>
+  <li>display subfolder
+    <ul>
+      <li>index.js - main file for the display version on the content element</li>
+    </ul>
+  </li>
+  <li>edit subfolder
+    <ul>
+      <li>index.js - main file for the edit version of the content element</li>
+      <li>TopToolbar.js - file for top toolbar used in the edit version, optional</li>
+      <li>SideToolbar.js - file for side toolbar used in the edit version, optional</li>
+    </ul>
+  </li>
+</ul>
+
+Add code for the edit component of your element to `edit/index.vue` file. If the element
+supports them, you can also add code for top toolbar and side toolbar in the designated
+files. In the same manner add code for the display component to `display/index.vue` file. 
+You can choose any kind of component composition, however only root `Edit` and `Display`
+components can be exposed as a part of the element's interface. 
+The `initState` function can optionally be specified 
+to return the initial state of that data.
+Make sure to edit the relevant properties of the manifest in `index.js` file.
+
+#### `preview` folder
+
+The intent of the previewer is to provide a development environment outside
+of Tailor CMS and other external systems. That way, you're able to get early 
+feedback on the element you're building and test it in isolation.
+Previewer supports sharing common properties between edit and display states if those exist.
+Look for the comments and placeholders in the code to wire up the components.
+
+#### Used technologies
+
+The project currently uses Vue 2, Vite and Vuetify 2.
