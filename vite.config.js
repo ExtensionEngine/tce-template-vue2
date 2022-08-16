@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite'
-import legacy from '@vitejs/plugin-legacy'
 import vue from '@vitejs/plugin-vue2'
 import Components from 'unplugin-vue-components/vite'
 import { VuetifyResolver } from 'unplugin-vue-components/resolvers'
@@ -11,10 +10,23 @@ const REPLACEMENT = `${path.resolve(__dirname, './src')}/`
 
 export default (/** if you want to use mode : { mode }*/) => {
   return defineConfig({
-    base: "./",
+    root: './src/preview/',
+    base: './',
     server: {
       host: HOST,
       port: process.env.PORT,
+    },
+    build: {
+      lib: {
+        entry: '../content-element/index.js',
+        name: 'TCE',
+        fileName: 'content-element'
+      },
+      rollupOptions: {
+        output: {
+          dir: './dist'
+        }
+      }
     },
     resolve: {
       alias: [
@@ -35,10 +47,6 @@ export default (/** if you want to use mode : { mode }*/) => {
           // Vuetify
           VuetifyResolver(),
         ],
-      }),
-      legacy({
-        targets: ['ie >= 11'],
-        additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
       }),
       viteCompression()
     ],

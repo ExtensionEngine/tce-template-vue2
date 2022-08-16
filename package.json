@@ -15,7 +15,6 @@
     "vuetify": "^2.6.9"
   },
   "devDependencies": {
-    "@vitejs/plugin-legacy": "^1.6.4",
     "@vitejs/plugin-vue2": "^1.1.2",
     "sass": "^1.49.0",
     "unplugin-vue-components": "^0.22.4",

@@ -1,7 +1,7 @@
-import Display from './display/index.svelte';
-import Edit from './edit/index.svelte';
-import SideToolbar from './edit/SideToolbar.svelte';
-import TopToolbar from './edit/TopToolbar.svelte';
+import Display from './display/index.vue';
+import Edit from './edit/index.vue';
+import SideToolbar from './edit/SideToolbar.vue';
+import TopToolbar from './edit/TopToolbar.vue';
 
 /**
  * Method used to create the initial state of the data by declaring the
