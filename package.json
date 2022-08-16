@@ -22,7 +22,9 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "build:prod": "vite build --mode production",
-    "lint": "eslint --ext .js,.ts,.vue ."
+    "lint:js": "eslint --ext .js,.ts,.vue .",
+    "lint:css": "stylelint \"src/**/*.vue\" \"src/**/*.scss\" \"src/**/*.css\"",
+    "lint": "npm run lint:js && npm run lint:css"
   },
   "dependencies": {
     "vite": "^2.7.13",
@@ -33,6 +35,7 @@
     "@babel/eslint-parser": "^7.18.9",
     "@babel/eslint-plugin": "^7.18.10",
     "@extensionengine/eslint-config": "^3.0.1",
+    "@extensionengine/stylelint-config": "^1.1.1",
     "@vitejs/plugin-vue2": "^1.1.2",
     "eslint": "^8.22.0",
     "eslint-config-semistandard": "^17.0.0",
@@ -43,6 +46,7 @@
     "eslint-plugin-require-sort": "^1.2.2",
     "eslint-plugin-vue": "^9.3.0",
     "sass": "^1.49.0",
+    "stylelint": "^13.13.1",
     "unplugin-vue-components": "^0.22.4",
     "vite-plugin-compression": "^0.4.0",
     "vite-plugin-vue2": "^1.9.2",
