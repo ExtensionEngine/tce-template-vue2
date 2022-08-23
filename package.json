@@ -1,5 +1,5 @@
 {
-  "name": "tce-template-vue",
+  "name": "@tailor-cms/tce-vue2",
   "private": true,
   "description": "Content element starter template for Vue 2",
   "author": "ExtensionEngine <info@extensionengine.com>",
@@ -16,7 +16,7 @@
     }
   },
   "scripts": {
-    "serve": "vite",
+    "dev": "vite",
     "serve:dev": "vite --mode development",
     "serve:prod": "vite --mode production",
     "build": "vite build",
@@ -24,10 +24,17 @@
     "build:prod": "vite build --mode production",
     "lint:js": "eslint --ext .js,.ts,.vue .",
     "lint:css": "stylelint \"src/**/*.vue\" \"src/**/*.scss\" \"src/**/*.css\"",
-    "lint": "npm run lint:js && npm run lint:css",
-    "setup": "node src/setup/index.cjs"
+    "lint": "npm run lint:js && npm run lint:css"
+  },
+  "bin": {
+    "@tailor-cms/tce-vue2": "bin/index.cjs"
   },
   "dependencies": {
+    "@npmcli/package-json": "^2.0.0",
+    "chalk": "^4.1.2",
+    "enquirer": "^2.3.6",
+    "shelljs": "^0.8.5",
+    "validate-npm-package-name": "^4.0.0",
     "vite": "^2.7.13",
     "vue": "^2.7.0",
     "vuetify": "^2.6.9"
@@ -37,9 +44,7 @@
     "@babel/eslint-plugin": "^7.18.10",
     "@extensionengine/eslint-config": "^3.0.1",
     "@extensionengine/stylelint-config": "^1.1.1",
-    "@npmcli/package-json": "^2.0.0",
     "@vitejs/plugin-vue2": "^1.1.2",
-    "enquirer": "^2.3.6",
     "eslint": "^8.22.0",
     "eslint-config-semistandard": "^17.0.0",
     "eslint-config-standard": "^17.0.0",
