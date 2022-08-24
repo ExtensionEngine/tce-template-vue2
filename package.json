@@ -1,9 +1,9 @@
 {
   "name": "@tailor-cms/tce-vue2",
-  "private": true,
   "description": "Content element starter template for Vue 2",
   "author": "ExtensionEngine <info@extensionengine.com>",
   "version": "0.0.1",
+  "type": "module",
   "files": [
     "dist"
   ],
